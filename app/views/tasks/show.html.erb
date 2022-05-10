@@ -1,0 +1,18 @@
+<div class="container">
+  <h1><%= @task.title %></h1>
+  <h2><%= @task.details %></h2>
+  <h3><%= @task.completed %></h3>
+</div>
+
+<%= link_to edit_task_path(@task) do %>
+  <i class="fas fa-edit"></i>
+<% end %>
+
+<%= link_to task_path(@task), method: :delete, data: { confirm: "Are you sure you want to delete #{@task.title}?" } do %>
+  <i class="fas fa-trash"></i>
+<% end %>
+
+<div>
+  <%= link_to "Home", tasks_path  %>
+
+</div>

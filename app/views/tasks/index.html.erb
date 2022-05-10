@@ -1,0 +1,14 @@
+  <div class="text-center">
+    <h1>Your Tasks</h1>
+  </div>
+
+<div class="card">
+  <% @tasks.each do |task| %>
+  <h2><%= link_to task.title, task_path(task)  %></h2>
+  <h3><%= task.completed %></h3>
+  <% end %>
+</div>
+
+<div>
+  <%= link_to "Make a new task", new_task_path %>
+</div>
